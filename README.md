@@ -13,8 +13,6 @@
 
 ---
 
-<img align="right" width="330" src="https://github-readme-stats.vercel.app/api/top-langs/?username=KumarShourya001&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=58A6FF&langs_count=8" />
-
 ### About Me
 
 ```yaml
@@ -25,8 +23,6 @@ learning:  [ system design, React, competitive programming ]
 building:  multimodal retrieval + full-stack projects
 reach_me:  kshourya2005@gmail.com
 ```
-
-<br clear="right"/>
 
 ---
 
@@ -101,8 +97,7 @@ C++ solutions from contests and practice. Greedy, DP, monotonic stack, graphs.
 
 ### GitHub Activity
 
-<img width="49%" src="https://github-readme-stats.vercel.app/api?username=KumarShourya001&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=58A6FF&icon_color=58A6FF&count_private=true" />
-<img width="49%" src="https://streak-stats.demolab.com?user=KumarShourya001&theme=tokyonight&hide_border=true&background=0d1117&ring=58A6FF&fire=58A6FF&currStreakLabel=58A6FF" />
+<img width="60%" src="https://streak-stats.demolab.com?user=KumarShourya001&theme=tokyonight&hide_border=true&background=0d1117&ring=58A6FF&fire=58A6FF&currStreakLabel=58A6FF" />
 
 <img width="98%" src="https://github-readme-activity-graph.vercel.app/graph?username=KumarShourya001&theme=tokyo-night&hide_border=true&bg_color=0d1117&color=58A6FF&line=58A6FF&point=ffffff&area=true" />
 
