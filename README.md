@@ -1,78 +1,141 @@
-# Kumar Shourya
+<div align="center">
 
-**B.Tech CSE @ NIT Patna** · Backend and applied ML
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=200&section=header&text=Kumar%20Shourya&fontSize=60&fontColor=ffffff&animation=fadeIn&fontAlignY=32&desc=CSE%20@%20NIT%20Patna%20%7C%20Software%20Engineering%20%2B%20Applied%20ML&descAlignY=52&descSize=18" width="100%" />
+
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1200&color=58A6FF&center=true&vCenter=true&width=650&lines=Building+multimodal+retrieval+systems;Solving+C%2B%2B+problems+on+Codeforces;Learning+system+design+and+full-stack;Always+shipping%2C+always+debugging" alt="Typing SVG" />
+
+<br/>
+
+<img src="https://komarev.com/ghpvc/?username=KumarShourya001&style=for-the-badge&color=58A6FF&label=PROFILE+VIEWS" alt="views" />
+<img src="https://img.shields.io/github/followers/KumarShourya001?style=for-the-badge&color=58A6FF&labelColor=0d1117" alt="followers" />
+
+</div>
 
 ---
 
-### About
+<img align="right" width="330" src="https://github-readme-stats.vercel.app/api/top-langs/?username=KumarShourya001&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=58A6FF&langs_count=8" />
 
-- 3rd-year Computer Science undergrad at NIT Patna (CGPA 8.49)
-- Primary focus on software engineering; applied ML as a second track
-- Currently working through DSA, low-level system design, and React for full-stack projects
+### About Me
+
+```yaml
+name:      Kumar Shourya
+education: B.Tech CSE, NIT Patna  (CGPA 8.49)
+focus:     [ software engineering, applied ML ]
+learning:  [ system design, React, competitive programming ]
+building:  multimodal retrieval + full-stack projects
+reach_me:  kshourya2005@gmail.com
+```
+
+<br clear="right"/>
 
 ---
+
+<div align="center">
 
 ### Tech Stack
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
-![C++](https://img.shields.io/badge/C++-00599C?style=flat&logo=cplusplus&logoColor=white)
-![Java](https://img.shields.io/badge/Java-007396?style=flat&logo=openjdk&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat&logo=postgresql&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
-![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black)
+<img src="https://skillicons.dev/icons?i=python,cpp,java,js,react,html,css&theme=dark" />
+<br/>
+<img src="https://skillicons.dev/icons?i=pytorch,tensorflow,opencv,fastapi,mysql,docker,git,github,linux,vscode&theme=dark" />
 
-![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat&logo=pytorch&logoColor=white)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat&logo=tensorflow&logoColor=white)
-![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=flat&logo=opencv&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white)
-![HuggingFace](https://img.shields.io/badge/Hugging%20Face-FFD21E?style=flat&logo=huggingface&logoColor=black)
+</div>
 
 ---
 
-### Projects
+### Featured Projects
 
-**[Multimodal Fashion Recommender](https://github.com/KumarShourya001/fashion-recommender)**
-Retrieval system over the H&M catalog (71K+ articles) using joint image-text embeddings. FashionCLIP for encoding, FAISS for approximate nearest-neighbour search, MAP@12 of ~0.021 on the Kaggle benchmark.
-Live demo: [KrShourya/hm-fashion-recommender](https://huggingface.co/spaces/KrShourya/hm-fashion-recommender) · Embedding comparison experiments: [multimodal-fashion-recommender](https://github.com/KumarShourya001/multimodal-fashion-recommender)
-`FashionCLIP` `FAISS` `Gradio` `Python`
+<table>
+<tr>
+<td width="50%" valign="top">
 
-**[Cancer Cell Detection](https://github.com/KumarShourya001/cancer_cell_detction)**
-CNN classifier over ~1,100 CT scan images, using augmentation and transfer learning to work around the small dataset.
+#### [Multimodal Fashion Recommender](https://github.com/KumarShourya001/fashion-recommender)
+
+Retrieval over the H&M catalog (71K+ articles) using joint image-text embeddings. FashionCLIP encoding, FAISS nearest-neighbour search, MAP@12 ≈ 0.021 on Kaggle.
+
+`FashionCLIP` `FAISS` `Gradio`
+
+[![Demo](https://img.shields.io/badge/Live%20Demo-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/spaces/KrShourya/hm-fashion-recommender)
+
+</td>
+<td width="50%" valign="top">
+
+#### [Cancer Cell Detection](https://github.com/KumarShourya001/cancer_cell_detction)
+
+CNN classifier over ~1,100 CT scan images, with augmentation and transfer learning to handle the small dataset.
+
 `TensorFlow` `Keras` `OpenCV`
 
-**[Hand-Tracked Flower Animation](https://github.com/KumarShourya001/flower_handtacker)**
-Real-time hand landmark tracking driving a procedurally animated flower, deployed as a web demo.
+[![Repo](https://img.shields.io/badge/View%20Code-0d1117?style=for-the-badge&logo=github&logoColor=white)](https://github.com/KumarShourya001/cancer_cell_detction)
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+#### [Hand-Tracked Flower Animation](https://github.com/KumarShourya001/flower_handtacker)
+
+Real-time hand landmark tracking driving a procedurally animated flower.
+
 `MediaPipe` `OpenCV` `Python`
 
-**[Supervised Learning Projects](https://github.com/KumarShourya001/ml-supervised-learning-projects)**
-Regression and classification implementations built while working through the fundamentals.
-`scikit-learn` `Pandas` `Jupyter`
+[![Repo](https://img.shields.io/badge/View%20Code-0d1117?style=for-the-badge&logo=github&logoColor=white)](https://github.com/KumarShourya001/flower_handtacker)
+
+</td>
+<td width="50%" valign="top">
+
+#### [Codeforces Archive](https://github.com/KumarShourya001/Codeforces)
+
+C++ solutions from contests and practice. Greedy, DP, monotonic stack, graphs.
+
+`C++` `DSA`
+
+[![Repo](https://img.shields.io/badge/View%20Code-0d1117?style=for-the-badge&logo=github&logoColor=white)](https://github.com/KumarShourya001/Codeforces)
+
+</td>
+</tr>
+</table>
 
 ---
 
-### Competitive Programming
+<div align="center">
 
-Solving in C++ on Codeforces and LeetCode. Currently in the 900–1100 rating band with a 1200+ target, focusing on greedy, DP, monotonic stack, and graph problems.
-Solution archive: [Codeforces](https://github.com/KumarShourya001/Codeforces)
+### GitHub Activity
 
-[![Codeforces](https://img.shields.io/badge/Codeforces-YOUR__HANDLE-1F8ACB?style=flat&logo=codeforces&logoColor=white)](https://codeforces.com/profile/YOUR_HANDLE)
-[![LeetCode](https://img.shields.io/badge/LeetCode-YOUR__HANDLE-FFA116?style=flat&logo=leetcode&logoColor=white)](https://leetcode.com/u/YOUR_HANDLE/)
+<img width="49%" src="https://github-readme-stats.vercel.app/api?username=KumarShourya001&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=58A6FF&icon_color=58A6FF&count_private=true" />
+<img width="49%" src="https://streak-stats.demolab.com?user=KumarShourya001&theme=tokyonight&hide_border=true&background=0d1117&ring=58A6FF&fire=58A6FF&currStreakLabel=58A6FF" />
 
----
+<img width="98%" src="https://github-readme-activity-graph.vercel.app/graph?username=KumarShourya001&theme=tokyo-night&hide_border=true&bg_color=0d1117&color=58A6FF&line=58A6FF&point=ffffff&area=true" />
 
-### GitHub Stats
+<img width="98%" src="https://github-profile-trophy.vercel.app/?username=KumarShourya001&theme=tokyonight&no-frame=true&no-bg=true&column=7&margin-w=8" />
 
-<p align="left">
-  <img height="150" src="https://github-readme-stats.vercel.app/api?username=KumarShourya001&show_icons=true&hide_border=true&count_private=true" />
-  <img height="150" src="https://github-readme-stats.vercel.app/api/top-langs/?username=KumarShourya001&layout=compact&hide_border=true" />
-</p>
+</div>
 
 ---
 
-### Contact
+<div align="center">
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/YOUR_PROFILE)
-[![Email](https://img.shields.io/badge/Email-D14836?style=flat&logo=gmail&logoColor=white)](mailto:kshourya2005@gmail.com)
-[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-FFD21E?style=flat&logo=huggingface&logoColor=black)](https://huggingface.co/KrShourya)
+### Contribution Snake
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/KumarShourya001/KumarShourya001/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/KumarShourya001/KumarShourya001/output/github-snake.svg" />
+  <img alt="snake animation" src="https://raw.githubusercontent.com/KumarShourya001/KumarShourya001/output/github-snake.svg" />
+</picture>
+
+</div>
+
+---
+
+<div align="center">
+
+### Connect
+
+<a href="https://linkedin.com/in/YOUR_PROFILE"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+<a href="mailto:kshourya2005@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
+<a href="https://huggingface.co/KrShourya"><img src="https://img.shields.io/badge/Hugging%20Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black" /></a>
+<a href="https://codeforces.com/profile/YOUR_HANDLE"><img src="https://img.shields.io/badge/Codeforces-1F8ACB?style=for-the-badge&logo=codeforces&logoColor=white" /></a>
+<a href="https://leetcode.com/u/YOUR_HANDLE/"><img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" /></a>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=120&section=footer" width="100%" />
+
+</div>
