@@ -101,8 +101,6 @@ C++ solutions from contests and practice. Greedy, DP, monotonic stack, graphs.
 
 <img width="98%" src="https://github-readme-activity-graph.vercel.app/graph?username=KumarShourya001&theme=tokyo-night&hide_border=true&bg_color=0d1117&color=58A6FF&line=58A6FF&point=ffffff&area=true" />
 
-<img width="98%" src="https://github-profile-trophy.vercel.app/?username=KumarShourya001&theme=tokyonight&no-frame=true&no-bg=true&column=7&margin-w=8" />
-
 </div>
 
 ---
