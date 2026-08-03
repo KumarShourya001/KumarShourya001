@@ -178,20 +178,6 @@ Real-time hand landmark tracking driving a procedurally rendered flower — peta
 
 <div align="center">
 
-## &nbsp;&nbsp;Activity
-
-<img width="58%" src="https://streak-stats.demolab.com?user=KumarShourya001&theme=tokyonight&hide_border=true&background=0d1117&ring=58A6FF&fire=58A6FF&currStreakLabel=58A6FF" />
-
-<br/><br/>
-
-<img width="98%" src="https://github-readme-activity-graph.vercel.app/graph?username=KumarShourya001&theme=tokyo-night&hide_border=true&bg_color=0d1117&color=58A6FF&line=58A6FF&point=ffffff&area=true" />
-
-</div>
-
-<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" />
-
-<div align="center">
-
 ### Contribution Snake
 
 <picture>
