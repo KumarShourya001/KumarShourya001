@@ -4,108 +4,51 @@
   <img alt="Kumar Shourya — software engineering, full-stack, applied ML" src="https://raw.githubusercontent.com/KumarShourya001/KumarShourya001/main/assets/hero-light.svg" width="100%">
 </picture>
 
-I care about the part that comes after the notebook — the API, the frontend, the container, the thing a stranger can actually open. Most of what I build ends up deployed somewhere. Right now that means an edge-first clinical scribe, an early-warning system for rural India, and a job queue that uses MongoDB as its own broker.
+I care about the part that comes after the notebook — the API, the frontend, the container, the thing a stranger can actually open. Most of what I build ends up deployed somewhere. Right now that means a job queue that uses MongoDB as its own broker, and multimodal retrieval over a 71,000-item catalog.
 
 <sub>B.Tech CSE at NIT Patna, CGPA 8.49 &nbsp;·&nbsp; Patna, India &nbsp;·&nbsp; <a href="mailto:kshourya2005@gmail.com">kshourya2005@gmail.com</a></sub>
 
 ## Selected work
 
-### Vaidya.AI — an edge-first clinical scribe
-
-Records a doctor–patient consultation, transcribes it locally, and turns it into a structured clinical note plus **FHIR R4B** resources. Every inference runs on the machine. The audio never leaves it.
-
-- **Local pipeline** — faster-whisper for speech, Ollama for generation. Switchable per request between `llama3.2:3b` (about 8s) and `qwen2.5:7b`, which reads clinical language better.
-- **Browser fallback** — no GPU on the host? whisper-tiny runs in-browser through transformers.js, with a 1.5B model on WebGPU. The privacy claim survives the move to the web.
-- **Patient portfolio** — conditions, allergies, medications and appointments behind auth, plus an emergency card that stays readable *without* signing in.
-- **Grounded assistant** — a chatbot scoped to one patient's record. It refuses to recommend or alter medication, and escalates on emergency symptoms.
-- **Deploy** — React/Vite frontend, containerised FastAPI backend, Postgres or SQLite.
-
-<sub>FastAPI &nbsp;·&nbsp; React &nbsp;·&nbsp; faster-whisper &nbsp;·&nbsp; Ollama &nbsp;·&nbsp; FHIR R4B &nbsp;·&nbsp; Docker</sub>
-
-[**Live demo**](https://vaidya-web.onrender.com) &nbsp;·&nbsp; [Source](https://github.com/KumarShourya001/VAIDYA.AI)
-
-<table>
-<tr>
-<td width="58%" valign="top">
-
-### KisanSaathi
-
-A pesticide application record and a dermal symptom report mean little apart. Joined on a shared spatial–temporal key, they become an early warning — and neither a health system nor an agriculture system can raise that flag alone.
-
-Built around Yavatmal district, Maharashtra, after the 2017 organophosphate poisoning cluster. Offline-first — records survive a force-kill and sync idempotently — with voice capture in Hindi, Marathi and English.
-
-<sub>React 19 &nbsp;·&nbsp; TypeScript &nbsp;·&nbsp; Dexie/IndexedDB &nbsp;·&nbsp; Neon Postgres &nbsp;·&nbsp; PGlite &nbsp;·&nbsp; Vercel</sub>
-
-[Source](https://github.com/KumarShourya001/KisanSaathi)
-
-</td>
-<td width="42%" valign="top">
-
 ### Distributed job queue
 
-MongoDB *is* the queue — no Redis, no RabbitMQ. A single atomic `findOneAndUpdate` is what stops two workers claiming the same job.
+Jobs are submitted over an HTTP API, persisted in MongoDB, claimed and executed by independent worker processes, and streamed live to a React dashboard over WebSockets.
 
-Retries with a dead-letter after three attempts, a sweeper that reclaims jobs stranded by a crashed worker, and change streams pushing every state transition to a React dashboard over WebSockets.
+- **MongoDB is the broker** — no Redis, no RabbitMQ. A single atomic `findOneAndUpdate` moves a job from `pending` to `claimed`, so exactly one worker wins it no matter how many are running.
+- **Failure handling** — a failed job increments `attempts` and returns to `pending`, then dead-letters after three. A sweeper runs every 5s and reclaims anything a crashed worker left stranded in `claimed` for more than 30 seconds.
+- **Live dashboard** — every write to the collection fires a change stream event, broadcast over WebSockets, so state transitions appear as they happen rather than on a poll.
+- **API** — `POST /jobs` validates with Zod and returns `202 Accepted` with the job id. The API records intent; it never runs the work.
+- **Deploy** — two Docker images from one source tree, different entrypoints for server and worker.
 
-<sub>Node.js &nbsp;·&nbsp; Express &nbsp;·&nbsp; MongoDB &nbsp;·&nbsp; WebSockets &nbsp;·&nbsp; Docker</sub>
+<sub>Node.js &nbsp;·&nbsp; Express &nbsp;·&nbsp; MongoDB &nbsp;·&nbsp; Mongoose &nbsp;·&nbsp; WebSockets &nbsp;·&nbsp; React &nbsp;·&nbsp; Docker</sub>
 
 [Source](https://github.com/KumarShourya001/Distributred_Job_Queue)
 
-</td>
-</tr>
-<tr>
-<td width="58%" valign="top">
-
 ### Fashion recommender
 
-Multimodal retrieval over H&M's catalog — 71K articles, 15M transactions. Joint image–text embeddings from FashionCLIP, FAISS for sub-second search, MMR reranking so the results don't collapse into twelve identical white shirts.
+Multimodal search over H&M's catalog — 71,664 articles with images, drawn from a dataset of 31M transactions. Search by photo, by description, or by both at once.
 
-**MAP@12 ≈ 0.021** on the Kaggle benchmark.
+- **Why FashionCLIP** — generic CLIP scored every garment between 0.93 and 0.95, so ranking was close to arbitrary and a purple hoodie returned olive cardigans. Swapping in a fashion-fine-tuned CLIP fixed it with the rest of the pipeline untouched, which isolated the embedding model as the real quality lever.
+- **Retrieval** — 512-dim embeddings in a FAISS `IndexFlatIP` over L2-normalised vectors, so inner product is cosine similarity. Image and text queries hit the same index, since CLIP puts both in a shared space.
+- **Combined queries** — upload a jacket, add *"but in black"*: the normalised image and text vectors are averaged and re-normalised so the phrase steers the image result. MMR reranking stops one query returning a row of near-duplicates.
+- **Outfit building** — visual neighbours within a category, plus items actually bought together, mined from transaction baskets and restricted to *different* categories so they complement rather than duplicate.
+- **Benchmark** — MAP@12 ≈ 0.021 on the Kaggle H&M task across 1.37M customers, roughly double a popularity-only baseline.
 
-<sub>PyTorch &nbsp;·&nbsp; FashionCLIP &nbsp;·&nbsp; FAISS &nbsp;·&nbsp; Gradio</sub>
+<sub>PyTorch &nbsp;·&nbsp; FashionCLIP &nbsp;·&nbsp; FAISS &nbsp;·&nbsp; Gradio &nbsp;·&nbsp; Hugging Face</sub>
 
 [**Try it**](https://huggingface.co/spaces/KrShourya/hm-fashion-recommender) &nbsp;·&nbsp; [Source](https://github.com/KumarShourya001/fashion-recommender)
 
-</td>
-<td width="42%" valign="top">
+## Other things I've made
 
-### DQN Atari
+- **Vaidya.AI** — an edge-first clinical scribe. faster-whisper and Ollama turn a consultation into a structured note plus FHIR R4B resources, and every inference runs on the machine, so the audio never leaves it. &nbsp;[Live demo](https://vaidya-web.onrender.com) &nbsp;·&nbsp; [Source](https://github.com/KumarShourya001/VAIDYA.AI)
 
-DeepMind's Deep Q-Network rebuilt from the 2013 and 2015 papers. The agents learn Pong, Breakout and Space Invaders from raw pixels.
+- **KisanSaathi** — joins pesticide application records with community health reports on a shared spatial–temporal key, so an exposure spike is visible before it becomes a crisis. Offline-first PWA, voice capture in Hindi, Marathi and English. &nbsp;[Source](https://github.com/KumarShourya001/KisanSaathi)
 
-Training loop written from scratch: experience replay, a target network on periodic sync, frame stacking, epsilon-greedy decay.
+- **DQN Atari** — DeepMind's Deep Q-Network rebuilt from the 2013 and 2015 papers. Experience replay, target network, frame stacking, epsilon-greedy decay, all from scratch; the agents learn from raw pixels. &nbsp;[Source](https://github.com/KumarShourya001/dqn-atari)
 
-<sub>TensorFlow &nbsp;·&nbsp; Gym &nbsp;·&nbsp; NumPy</sub>
+- **Hand-tracked flower** — real-time hand landmarks driving a procedurally rendered flower, petals opening with finger spread. &nbsp;[Try it](https://huggingface.co/spaces/KrShourya/hand-flower) &nbsp;·&nbsp; [Source](https://github.com/KumarShourya001/flower_handtacker)
 
-[Source](https://github.com/KumarShourya001/dqn-atari)
-
-</td>
-</tr>
-<tr>
-<td width="58%" valign="top">
-
-### Hand-tracked flower
-
-Real-time hand landmark tracking driving a procedurally rendered flower. The petals open with finger spread, and a neon glow shader sits on top.
-
-<sub>MediaPipe &nbsp;·&nbsp; OpenCV</sub>
-
-[**Try it**](https://huggingface.co/spaces/KrShourya/hand-flower) &nbsp;·&nbsp; [Source](https://github.com/KumarShourya001/flower_handtacker)
-
-</td>
-<td width="42%" valign="top">
-
-### Cancer cell detection
-
-A CNN classifier over roughly 1,100 CT scan images, using augmentation and transfer learning to fight a dataset far too small to train from scratch.
-
-<sub>Keras &nbsp;·&nbsp; OpenCV</sub>
-
-[Source](https://github.com/KumarShourya001/cancer_cell_detction)
-
-</td>
-</tr>
-</table>
+- **Cancer cell detection** — a CNN over roughly 1,100 CT scan images, using augmentation and transfer learning against a dataset far too small to train from scratch. &nbsp;[Source](https://github.com/KumarShourya001/cancer_cell_detction)
 
 ## Stack
 
