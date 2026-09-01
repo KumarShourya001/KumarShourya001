@@ -19,8 +19,8 @@ jobs:
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/github-snake.svg
-            dist/github-snake-dark.svg?palette=github-dark
+            dist/github-snake.svg?color_snake=%23A9662A&color_dots=%23EFEBE5,%23E9D5B8,%23D9B183,%23C08A50,%23A9662A
+            dist/github-snake-dark.svg?color_snake=%23D9A05B&color_dots=%23161B22,%233A2E20,%236B4E28,%23A9762F,%23D9A05B
 
       - uses: peaceiris/actions-gh-pages@v4
         with:

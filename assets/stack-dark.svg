@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 314" width="1200" height="314" role="img" aria-label="Stack - LANGUAGES: Python, C++, TypeScript, JavaScript, Java, SQL; FRONTEND: React, Vite, Tailwind, PWA / offline-first; BACKEND: FastAPI, Node.js, Express, MongoDB, PostgreSQL, Docker; ML: PyTorch, TensorFlow, Keras, scikit-learn, OpenCV, FAISS, Transformers; TOOLING: Git, Linux, GitHub Actions, Ollama, Vercel, Neon">
+  <style>
+    .lbl { font: 500 11px ui-monospace,'SF Mono','Cascadia Mono','JetBrains Mono','Segoe UI Mono','Roboto Mono',Menlo,Consolas,monospace; letter-spacing: 1.7px; fill: #8B949E; }
+    .val { font: 400 14.5px ui-monospace,'SF Mono','Cascadia Mono','JetBrains Mono','Segoe UI Mono','Roboto Mono',Menlo,Consolas,monospace; fill: #E6EDF3; }
+    .sep { fill: #30363D; }
+  </style>
+  <rect x="56" y="38" width="3" height="13" fill="#D9A05B" opacity="0.85"/>
+  <text class="lbl" x="72" y="58">LANGUAGES</text>
+  <text class="val" x="266" y="58">Python<tspan class="sep"> &#183; </tspan>C++<tspan class="sep"> &#183; </tspan>TypeScript<tspan class="sep"> &#183; </tspan>JavaScript<tspan class="sep"> &#183; </tspan>Java<tspan class="sep"> &#183; </tspan>SQL</text>
+  <rect x="56" y="74" width="1088" height="1" fill="#30363D" opacity="0.55"/>
+  <rect x="56" y="92" width="3" height="13" fill="#D9A05B" opacity="0.85"/>
+  <text class="lbl" x="72" y="112">FRONTEND</text>
+  <text class="val" x="266" y="112">React<tspan class="sep"> &#183; </tspan>Vite<tspan class="sep"> &#183; </tspan>Tailwind<tspan class="sep"> &#183; </tspan>PWA / offline-first</text>
+  <rect x="56" y="128" width="1088" height="1" fill="#30363D" opacity="0.55"/>
+  <rect x="56" y="146" width="3" height="13" fill="#D9A05B" opacity="0.85"/>
+  <text class="lbl" x="72" y="166">BACKEND</text>
+  <text class="val" x="266" y="166">FastAPI<tspan class="sep"> &#183; </tspan>Node.js<tspan class="sep"> &#183; </tspan>Express<tspan class="sep"> &#183; </tspan>MongoDB<tspan class="sep"> &#183; </tspan>PostgreSQL<tspan class="sep"> &#183; </tspan>Docker</text>
+  <rect x="56" y="182" width="1088" height="1" fill="#30363D" opacity="0.55"/>
+  <rect x="56" y="200" width="3" height="13" fill="#D9A05B" opacity="0.85"/>
+  <text class="lbl" x="72" y="220">ML</text>
+  <text class="val" x="266" y="220">PyTorch<tspan class="sep"> &#183; </tspan>TensorFlow<tspan class="sep"> &#183; </tspan>Keras<tspan class="sep"> &#183; </tspan>scikit-learn<tspan class="sep"> &#183; </tspan>OpenCV<tspan class="sep"> &#183; </tspan>FAISS<tspan class="sep"> &#183; </tspan>Transformers</text>
+  <rect x="56" y="236" width="1088" height="1" fill="#30363D" opacity="0.55"/>
+  <rect x="56" y="254" width="3" height="13" fill="#D9A05B" opacity="0.85"/>
+  <text class="lbl" x="72" y="274">TOOLING</text>
+  <text class="val" x="266" y="274">Git<tspan class="sep"> &#183; </tspan>Linux<tspan class="sep"> &#183; </tspan>GitHub Actions<tspan class="sep"> &#183; </tspan>Ollama<tspan class="sep"> &#183; </tspan>Vercel<tspan class="sep"> &#183; </tspan>Neon</text>
+</svg>
