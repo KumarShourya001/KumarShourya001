@@ -52,7 +52,7 @@ Multimodal search over H&M's catalog — 71,664 articles with images, from a dat
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/KumarShourya001/KumarShourya001/main/assets/stack-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/KumarShourya001/KumarShourya001/main/assets/stack-light.svg">
-  <img alt="Stack — Languages: Python, C++, TypeScript, JavaScript, Java, SQL. Frontend: React, Vite, Tailwind, PWA / offline-first. Backend: FastAPI, Node.js, Express, MongoDB, PostgreSQL, Docker. ML: PyTorch, TensorFlow, Keras, scikit-learn, OpenCV, FAISS, Transformers. Tooling: Git, Linux, GitHub Actions, Ollama, Vercel, Neon." src="https://raw.githubusercontent.com/KumarShourya001/KumarShourya001/main/assets/stack-light.svg" width="100%">
+  <img alt="Stack — Languages: Python, C++, TypeScript, JavaScript, SQL. Frontend: React, Vite, Tailwind, PWA / offline-first. Backend: FastAPI, Node.js, Express, MongoDB, PostgreSQL, WebSockets, Docker. ML: PyTorch, TensorFlow, Keras, scikit-learn, OpenCV, MediaPipe, FAISS, Transformers, Whisper. Tooling: Git, Linux, Jupyter, Gradio, Hugging Face, Ollama, Caddy, Azure, Vercel." src="https://raw.githubusercontent.com/KumarShourya001/KumarShourya001/main/assets/stack-light.svg" width="100%">
 </picture>
 
 ## Contributions
