@@ -12,15 +12,16 @@ I care about the part that comes after the notebook — the API, the frontend, t
 
 ### Distributed job queue
 
-Jobs go in over HTTP, persist in MongoDB, get claimed by independent workers, and stream live to a React dashboard.
+Jobs go in over HTTP, persist in MongoDB, get claimed by independent workers, and stream live to a React dashboard. Running in production: one API container and three workers on an Azure VM, behind Caddy.
 
-- **MongoDB is the broker** — no Redis, no RabbitMQ. One atomic `findOneAndUpdate` claims a job, so exactly one worker wins it however many are running.
-- **Failure handling** — failed jobs retry, then dead-letter after three attempts. A sweeper reclaims anything a crashed worker left stranded for 30 seconds.
-- **Live updates** — change streams push every state transition over WebSockets, so the dashboard never polls.
+- **MongoDB is the broker** — no Redis, no RabbitMQ. One atomic `findOneAndUpdate` claims a job. Measured against a naive find-then-save, which handed one job to 8 workers; this hands it to 1.
+- **Failure handling** — exponential backoff with jitter, dead-letter after three attempts. Fencing tokens on every conditional write, so a worker that lost its lease can't corrupt the result. A sweeper reclaims jobs from dead workers.
+- **Multi-tenant and hardened** — session auth with per-user isolation, `404` rather than `403` so ids don't leak, token-bucket rate limiting, an SSRF guard on outbound URLs, and `503` with `Retry-After` when the queue is full.
+- **Tested for real** — 131 tests that spawn actual server and worker processes and assert on effects, not return values. Nearly every bug this hit was a silent no-op.
 
-<sub>Node.js &nbsp;·&nbsp; Express &nbsp;·&nbsp; MongoDB &nbsp;·&nbsp; WebSockets &nbsp;·&nbsp; React &nbsp;·&nbsp; Docker</sub>
+<sub>Node.js &nbsp;·&nbsp; Express &nbsp;·&nbsp; MongoDB &nbsp;·&nbsp; WebSockets &nbsp;·&nbsp; React &nbsp;·&nbsp; Docker &nbsp;·&nbsp; Caddy &nbsp;·&nbsp; Azure</sub>
 
-[Source](https://github.com/KumarShourya001/Distributred_Job_Queue)
+[**Live**](https://queue.kumarshourya.me) &nbsp;·&nbsp; [Source](https://github.com/KumarShourya001/Distributred_Job_Queue)
 
 ### Fashion recommender
 
